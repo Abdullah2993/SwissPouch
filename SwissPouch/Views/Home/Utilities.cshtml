@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Utilities";
+}
+
+@using System.Reflection;
+@using System.Runtime.CompilerServices
+@using System.Web.Http
+@using SwissPouch.Attributes;
+@using SwissPouch.Controllers;
+@using HttpGetAttribute = System.Web.Http.HttpGetAttribute
+@using HttpPostAttribute = System.Web.Http.HttpPostAttribute
+
+@foreach (var methodInfo in typeof(UtilitiesController).GetMethods())
+{
+    var getAttr = methodInfo.GetCustomAttribute<HttpGetAttribute>();
+    var postAttr = methodInfo.GetCustomAttribute<HttpPostAttribute>();
+    var owsvAttr = methodInfo.GetCustomAttribute<OwsvAttribute>();
+    var twsvAttr = methodInfo.GetCustomAttribute<TwsvAttribute>();
+
+    var method = getAttr != null ? "GET" : postAttr != null ? "POST" : null;
+
+    if (method == null)
+    {
+        continue;
+    }
+
+    if (owsvAttr != null)
+    {
+        var link = $"api/{nameof(UtilitiesController).Replace("Controller","")}/{methodInfo.Name}";
+        @:<owsv params="title: '@owsvAttr.Title', buttonLabel: '@owsvAttr.ButtonLabel', link: '@link' ,method: '@method'"></owsv>
+    }
+    else if(twsvAttr!=null)
+    {
+        
+    }
+
+}
+
+
+
+

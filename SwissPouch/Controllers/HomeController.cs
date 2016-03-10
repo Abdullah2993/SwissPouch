@@ -10,7 +10,11 @@ namespace SwissPouch.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Utilities";
+            return View("Utilities");
+        }
+
+        public ActionResult Utilities()
+        {
             return View();
         }
     }

@@ -6,19 +6,15 @@ using System.Web;
 namespace SwissPouch.Attributes
 {
     [AttributeUsage(AttributeTargets.Method)]
-    public class Owsv:Attribute
+    public class OwsvAttribute:Attribute
     {
         public string Title { get; set; }
         public string ButtonLabel { get; set; }
-        public string Link { get; set; }
-        public string Method { get; set; }
 
-        public Owsv(string title,string buttonLabel,string link,string method="GET")
+        public OwsvAttribute(string title,string buttonLabel)
         {
             Title = title;
             ButtonLabel = buttonLabel;
-            Link = link;
-            Method = method;
         }      
     }
 }
