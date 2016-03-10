@@ -10,7 +10,7 @@ namespace SwissPouch.Attributes
         public string SecondButtonLabel { get; set; }
         public string PlaceHolder { get; set; }
 
-        public TwsvAttribute(string title, string firstButtonLabel,string secondButtonLabel, string placeHolder = "")
+        public TwsvAttribute(string title, string firstButtonLabel,string secondButtonLabel, string placeHolder = "Enter the text here...")
         {
             Title = title;
             FirstButtonLabel = firstButtonLabel;

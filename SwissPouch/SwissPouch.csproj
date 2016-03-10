@@ -132,8 +132,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\OwsvAttribute.cs" />
     <Compile Include="Attributes\TwsvAttribute.cs" />
+    <Compile Include="Controllers\CryptoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UtilitiesController.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,6 +172,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Utilities.cshtml" />
+    <Content Include="Views\Home\Crypto.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

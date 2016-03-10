@@ -1,14 +1,16 @@
 ﻿@{
-    ViewBag.Title = "Utilities";
+    ViewBag.Title = "Crypto";
 }
 
 @using System.Reflection;
+@using System.Runtime.CompilerServices
+@using System.Web.Http
 @using SwissPouch.Attributes;
 @using SwissPouch.Controllers;
 @using HttpGetAttribute = System.Web.Http.HttpGetAttribute
 @using HttpPostAttribute = System.Web.Http.HttpPostAttribute
 
-@foreach (var methodInfo in typeof(UtilitiesController).GetMethods())
+@foreach (var methodInfo in typeof(CryptoController).GetMethods())
 {
     var getAttr = methodInfo.GetCustomAttribute<HttpGetAttribute>();
     var postAttr = methodInfo.GetCustomAttribute<HttpPostAttribute>();
@@ -24,13 +26,12 @@
 
     if (owsvAttr != null)
     {
-        var link = $"api/{nameof(UtilitiesController).Replace("Controller","")}/{methodInfo.Name}";
+        var link = $"api/{nameof(CryptoController).Replace("Controller","")}/{methodInfo.Name}";
         @:<owsv params="title: '@owsvAttr.Title', buttonLabel: '@owsvAttr.ButtonLabel', link: '@link', placeHolder: '@owsvAttr.PlaceHolder' ,method: '@method'"></owsv>
     }
-    else if (twsvAttr != null)
+    else if(twsvAttr!=null)
     {
-        var link = $"api/{nameof(UtilitiesController).Replace("Controller", "")}/{methodInfo.Name}";
-        @:<twsv params="title: '@twsvAttr.Title', buttonLabel1: '@twsvAttr.FirstButtonLabel',buttonLabel2: '@twsvAttr.SecondButtonLabel', link: '@link', placeHolder: '@twsvAttr.PlaceHolder' ,method: '@method'"></twsv>
+        
     }
 
 }

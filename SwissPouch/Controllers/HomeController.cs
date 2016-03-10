@@ -17,5 +17,10 @@ namespace SwissPouch.Controllers
         {
             return View();
         }
+
+        public ActionResult Crypto()
+        {
+            return View();
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace SwissPouch.Attributes
         public string ButtonLabel { get; set; }
         public string PlaceHolder { get; set; }
 
-        public OwsvAttribute(string title,string buttonLabel,string placeHolder="")
+        public OwsvAttribute(string title,string buttonLabel,string placeHolder= "Enter the text here...")
         {
             Title = title;
             ButtonLabel = buttonLabel;
