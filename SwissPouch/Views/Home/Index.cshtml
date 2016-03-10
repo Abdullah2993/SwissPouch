@@ -1,9 +1,8 @@
-﻿@using System;
-@using System.Reflection;
+﻿@using System.Reflection;
 @using SwissPouch.Attributes;
 @using SwissPouch.Controllers;
 
-@foreach (var type in Assembly.GetAssembly(typeof (ValuesController)).GetTypes())
+@foreach (var type in Assembly.GetAssembly(typeof (UtilitiesController)).GetTypes())
 {
     if (type.IsClass)
     {

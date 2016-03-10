@@ -7,11 +7,18 @@
         self.link = params.link;
         self.text = ko.observable();
         self.method = params.method;
-        self.getData = function() {
+        self.getData = function () {
+            var selfData;
+            if (self.method === "GET") {
+                selfData = "data=" + self.text();
+            }else{
+                selfData = JSON.stringify(self.text());
+            }
+
             $.ajax({
                 url: self.link,
                 method: self.method,
-                data: JSON.stringify(self.text()),
+                data: selfData ,
                 processData: false,
                 contentType: "application/json",
                 dataType: "json"

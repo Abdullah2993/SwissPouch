@@ -8,21 +8,24 @@ using SwissPouch.Attributes;
 
 namespace SwissPouch.Controllers
 {
-    public class ValuesController : ApiController
+    public class UtilitiesController : ApiController
     {
-        [Owsv("Get1","Get It!","/api/values")]
-        public string Get()
+        //[Owsv("Get1","Get It!","/api/values")]
+        //public string Get(string data)
+        //{
+        //    return data?.ToUpper();
+        //}
+
+        [HttpGet]
+        [Owsv("Get1", "Get It!", "/api/utilities/toupper")]
+        public string ToUpper(string data)
         {
-            return "Test1";
+            var v = $"dsf";
+            return data?.ToUpper();
         }
 
-        [Owsv("Get2", "Get It!","")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        [Owsv("Post1", "Post It!","/api/values/","POST")]
+        [HttpPost]
+        [Owsv("Post1", "Post It!","/api/values")]
         public string Post([FromBody]string value)
         {
             return value?.ToUpper();
