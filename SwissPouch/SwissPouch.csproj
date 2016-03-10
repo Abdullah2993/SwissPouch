@@ -133,7 +133,7 @@
     <Compile Include="Attributes\OwsvAttribute.cs" />
     <Compile Include="Attributes\TwsvAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\UtilitiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -8,11 +8,14 @@ namespace SwissPouch.Attributes
         public string Title { get; set; }
         public string FirstButtonLabel { get; set; }
         public string SecondButtonLabel { get; set; }
-        public TwsvAttribute(string title, string firstButtonLabel,string secondButtonLabel)
+        public string PlaceHolder { get; set; }
+
+        public TwsvAttribute(string title, string firstButtonLabel,string secondButtonLabel, string placeHolder = "")
         {
             Title = title;
             FirstButtonLabel = firstButtonLabel;
             SecondButtonLabel = secondButtonLabel;
+            PlaceHolder = placeHolder;
         }
     }
 }

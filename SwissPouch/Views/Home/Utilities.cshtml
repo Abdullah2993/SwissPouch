@@ -27,7 +27,7 @@
     if (owsvAttr != null)
     {
         var link = $"api/{nameof(UtilitiesController).Replace("Controller","")}/{methodInfo.Name}";
-        @:<owsv params="title: '@owsvAttr.Title', buttonLabel: '@owsvAttr.ButtonLabel', link: '@link' ,method: '@method'"></owsv>
+        @:<owsv params="title: '@owsvAttr.Title', buttonLabel: '@owsvAttr.ButtonLabel', link: '@link', placeHolder: '@owsvAttr.PlaceHolder' ,method: '@method'"></owsv>
     }
     else if(twsvAttr!=null)
     {
