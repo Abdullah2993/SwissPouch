@@ -1,6 +1,6 @@
 using SwissPouch.Models;
 
-namespace SwissPouch.Tests1.Controllers
+namespace SwissPouch.Tests
 {
     public static class Extensions
     {

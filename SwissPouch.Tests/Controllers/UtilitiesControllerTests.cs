@@ -1,4 +1,5 @@
 ﻿using SwissPouch.Controllers;
+using SwissPouch.Tests;
 using Xunit;
 
 namespace SwissPouch.Tests1.Controllers

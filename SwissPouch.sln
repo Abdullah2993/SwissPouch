@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissPouch", "SwissPouch\SwissPouch.csproj", "{9F87326C-690E-47AF-ACB1-2B66B22D32BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissPouch.Tests", "SwissPouch.Tests1\SwissPouch.Tests.csproj", "{D552A157-CFF2-4219-A9F1-45F7FBE94104}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissPouch.Tests", "SwissPouch.Tests\SwissPouch.Tests.csproj", "{D552A157-CFF2-4219-A9F1-45F7FBE94104}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
