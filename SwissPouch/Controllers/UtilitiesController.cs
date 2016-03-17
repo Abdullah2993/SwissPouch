@@ -2,43 +2,44 @@
 using System.Text;
 using System.Web;
 using System.Web.Http;
+using System.Web.Mvc;
 using SwissPouch.Attributes;
 using SwissPouch.Extensions;
+using SwissPouch.Models;
 
 namespace SwissPouch.Controllers
 {
     public class UtilitiesController : ApiController
     {
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         [Owsv("Convert To Upper Case", "Convert")]
-        public string ToUpper([FromBody]string data)
+        public string ToUpper([FromBody]DataModel data)
         {
-            return data?.ToUpper();
+            return data.Data.ToUpper();
         }
 
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         [Owsv("Convert To Lower Case", "Convert")]
-        public string ToLower([FromBody]string data)
+        public string ToLower([FromBody]DataModel data)
         {
-            return data?.ToLower();
+            return data.Data.ToLower();
         }
 
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         [Owsv("To Hex String","Convert")]
-        public string ToHexString([FromBody] string data)
+        public string ToHexString([FromBody] DataModel data)
         {
-            return data?.ToBytes().ToHex();
+            return data.Data.ToBytes().ToHex();
         }
 
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         [Twsv("Base64 Encode/Decode", "Encode", "Decode")]
-        public string Base64([FromUri] int id, [FromBody] string data)
+        public string Base64([FromUri] int id, [FromBody] DataModel data)
         {
-            if (data == null) return string.Empty;
             try
             {
-                if (id == 1) return Convert.ToBase64String(data.ToBytes());               
-                if (id == 2) return Encoding.UTF8.GetString(Convert.FromBase64String(data));               
+                if (id == 1) return Convert.ToBase64String(data.Data.ToBytes());               
+                if (id == 2) return Encoding.UTF8.GetString(Convert.FromBase64String(data.Data));               
             }
             catch
             {
@@ -47,15 +48,14 @@ namespace SwissPouch.Controllers
             return string.Empty;
         }
 
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         [Twsv("Html Encode/Decode", "Encode", "Decode")]
-        public string Html([FromUri]int id,[FromBody]string data)
+        public string Html([FromUri]int id,[FromBody]DataModel data)
         {
-            if (data == null) return string.Empty;
             try
             {
-                if (id == 1) return HttpUtility.HtmlEncode(data);
-                if (id == 2) return HttpUtility.HtmlDecode(data);
+                if (id == 1) return HttpUtility.HtmlEncode(data.Data);
+                if (id == 2) return HttpUtility.HtmlDecode(data.Data);
             }
             catch
             {
@@ -64,15 +64,14 @@ namespace SwissPouch.Controllers
             return string.Empty;
         }
 
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         [Twsv("URL Encode/Decode", "Encode", "Decode")]
-        public string Uri([FromUri]int id, [FromBody]string data)
+        public string Uri([FromUri]int id, [FromBody]DataModel data)
         {
-            if (data == null) return string.Empty;
             try
             {
-                if (id == 1) return HttpUtility.UrlEncode(data);
-                if (id == 2) return HttpUtility.UrlDecode(data);
+                if (id == 1) return HttpUtility.UrlEncode(data.Data);
+                if (id == 2) return HttpUtility.UrlDecode(data.Data);
             }
             catch
             {

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace SwissPouch.Controllers
 {
+    [OutputCache(Duration = 60*60*24)]
     public class HomeController : Controller
     {
         public ActionResult Index()
